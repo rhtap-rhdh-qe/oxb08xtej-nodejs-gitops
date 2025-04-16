@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: oxb08xtej-nodejs-gitops
+  description: This is GitOps manifest for oxb08xtej-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=oxb08xtej-nodejs
+    backstage.io/kubernetes-id: oxb08xtej-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: oxb08xtej-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:oxb08xtej-nodejs
